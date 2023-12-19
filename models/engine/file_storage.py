@@ -4,7 +4,7 @@ import json
 
 
 class FileStorage:
-    """This class manages storage of hbnb models in JSON format"""
+    """It manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
     __objects = {}
 
@@ -26,7 +26,7 @@ class FileStorage:
             )
 
     def save(self):
-        """Saves storage dictionary to file"""
+        """It saves storage dictionary - file"""
         with open(self.__file_path, 'w') as f:
             temp = {}
             temp.update(self.__objects)
@@ -38,11 +38,11 @@ class FileStorage:
         """Loads storage dictionary from file"""
         from models.base_model import BaseModel
         from models.user import User
+        from models.place import Place
         from models.state import State
-        from models.review import Review
         from models.city import City
         from models.amenity import Amenity
-        from models.place import Place
+        from models.review import Review
 
         classes = {
                     'BaseModel': BaseModel, 'User': User, 'Place': Place,
@@ -59,7 +59,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        ''' It removes object obj from attribute
+        ''' It deletes object obj from attribute
             __objects if it's inside it
         '''
         if obj is None:
