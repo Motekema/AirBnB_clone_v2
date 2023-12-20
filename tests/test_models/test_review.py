@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" """
+"""Modal test """
 from tests.test_models.test_base_model import test_basemodel
 from models.review import Review
 
 
 class test_review(test_basemodel):
-    """ """
+    """Save """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -14,7 +14,7 @@ class test_review(test_basemodel):
         self.value = Review
 
     def test_place_id(self):
-        """ """
+        """Change """
         new = self.value()
         self.assertEqual(type(new.place_id), str)
 
