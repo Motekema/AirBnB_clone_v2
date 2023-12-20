@@ -67,3 +67,11 @@ class FileStorage:
     def close(self):
         """Call the reload method."""
         self.reload()
+
+
+# Add this part if it's not already present
+if __name__ == "__main__":
+    fs = FileStorage()
+    fs.reload()
+    fs.save()
+
