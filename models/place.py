@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""This are the place class"""
+"""This is the place class"""
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, Table, String, Integer, Float, ForeignKey
+from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from os import getenv
 import models
-
+from models.amenity import Amenity
 
 place_amenity = Table("place_amenity", Base.metadata,
                       Column("place_id", String(60),
@@ -20,7 +20,7 @@ place_amenity = Table("place_amenity", Base.metadata,
 
 
 class Place(BaseModel, Base):
-    """This are the class for Place
+    """This is the class for Place
     Attributes:
         city_id: city id
         user_id: user id
@@ -45,39 +45,38 @@ class Place(BaseModel, Base):
     price_by_night = Column(Integer, nullable=False, default=0)
     latitude = Column(Float)
     longitude = Column(Float)
-    amenity_ids = []
 
     if getenv("HBNB_TYPE_STORAGE") == "db":
         reviews = relationship("Review", cascade='all, delete, delete-orphan',
                                backref="place")
-
         amenities = relationship("Amenity", secondary=place_amenity,
                                  viewonly=False,
                                  back_populates="place_amenities")
+
     else:
         @property
         def reviews(self):
-            """ Return the list of reviews.id """
+            """Return the list of reviews.id"""
             var = models.storage.all()
             lista = []
             result = []
             for key in var:
                 review = key.replace('.', ' ')
                 review = shlex.split(review)
-                if (review[0] == 'Review'):
+                if review[0] == 'Review':
                     lista.append(var[key])
             for elem in lista:
-                if (elem.place_id == self.id):
+                if elem.place_id == self.id:
                     result.append(elem)
-            return (result)
+            return result
 
         @property
         def amenities(self):
-            """ Returns the list of amenity ids """
+            """Return the list of amenity ids"""
             return self.amenity_ids
 
         @amenities.setter
         def amenities(self, obj=None):
-            """ Appends amenity id to the attribute """
-            if type(obj) is Amenity and obj.id not in self.amenity_ids:
+            """Append amenity id to the attribute"""
+            if isinstance(obj, Amenity) and obj.id not in self.amenity_ids:
                 self.amenity_ids.append(obj.id)
