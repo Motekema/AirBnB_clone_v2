@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is the base model class for AirBnB"""
+"""This are the base model class for AirBnB"""
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 import models
@@ -11,17 +11,17 @@ Base = declarative_base()
 
 
 class BaseModel:
-    """This class will defines all common attributes/methods
-    for other classes
+    """This are class will defines all common attributes/methods
+    for classes
     """
     id = Column(String(60), unique=True, nullable=False, primary_key=True)
     created_at = Column(DateTime, nullable=False, default=(datetime.utcnow()))
     updated_at = Column(DateTime, nullable=False, default=(datetime.utcnow()))
 
     def __init__(self, *args, **kwargs):
-        """Instantiation of base model class
+        """Instantiation of the base model class
         Args:
-            args: it won't be used
+            args: it won't be use
             kwargs: arguments for the constructor of the BaseModel
         Attributes:
             id: unique id generated
@@ -58,16 +58,16 @@ class BaseModel:
         return self.__str__()
 
     def save(self):
-        """updates the public instance attribute updated_at to current
+        """update the public instance attribute updated_at to current
         """
         self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
-        """creates dictionary of the class  and returns
+        """create dictionary of the class  and returns
         Return:
-            returns a dictionary of all the key values in __dict__
+            return the dictionary of all the key values in __dict__
         """
         my_dict = dict(self.__dict__)
         my_dict["__class__"] = str(type(self).__name__)
@@ -78,6 +78,6 @@ class BaseModel:
         return my_dict
 
     def delete(self):
-        """ delete object
+        """ delete the object
         """
         models.storage.delete(self)
