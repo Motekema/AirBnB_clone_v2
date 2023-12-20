@@ -6,7 +6,7 @@ import cmd
 import shutil
 
 """
-Cleanup file storage
+Cleanup the file storage
 """
 import os
 file_path = "file.json"
@@ -20,7 +20,7 @@ if os.path.exists(file_path):
     os.remove(file_path)
 
 """
-Backup console file
+Backup the console file
 """
 if os.path.exists("tmp_console_main.py"):
     shutil.copy("tmp_console_main.py", "console.py")
@@ -58,7 +58,7 @@ with open("tmp_console_main.py", "r") as file_i:
 import console
 
 """
- Create console
+ Create the console
 """
 console_obj = "HBNBCommand"
 for name, obj in inspect.getmembers(console):
@@ -69,7 +69,7 @@ my_console = console_obj(stdout=io.StringIO(), stdin=io.StringIO())
 my_console.use_rawinput = False
 
 """
- Exec command
+ Exec the command
 """
 def exec_command(my_console, the_command, last_lines = 1):
     my_console.stdout = io.StringIO()
