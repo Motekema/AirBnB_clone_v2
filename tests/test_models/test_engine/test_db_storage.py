@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the TestDBStorageDocs and TestDBStorage classes
+Contains a TestDBStorageDocs and TestDBStorage classes
 """
 from datetime import datetime
 import inspect
@@ -24,7 +24,7 @@ storage_t = os.getenv("HBNB_TYPE_STORAGE")
 
 
 class TestDBStorageDocs(unittest.TestCase):
-    """Tests to check the documentation and style of DBStorage class"""
+    """Tests to check a documentation and style of DBStorage class"""
     @classmethod
     def setUpClass(cls):
         """Set up for the doc tests"""
@@ -66,7 +66,7 @@ test_db_storage.py'])
 #         """Test that save properly saves objects to file.json"""
 
 class TestDBStorageDocs(unittest.TestCase):
-    """Tests to check the documentation and style of DBStorage class"""
+    """Tests to check a documentation and style of the DBStorage class"""
     @classmethod
     def setUpClass(cls):
         """Set up for the doc tests"""
@@ -127,4 +127,4 @@ class TestFileStorage(unittest.TestCase):
 
     @unittest.skipIf(storage_t != 'db', "not testing db storage")
     def test_save(self):
-        """Test that save properly saves objects to file.json"""
+        """Test that save properly save objects to file.json"""
