@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""Testing save method """
 from tests.test_models.test_base_model import test_basemodel
 from models.place import Place
 
@@ -14,7 +14,7 @@ class test_Place(test_basemodel):
         self.value = Place
 
     def test_city_id(self):
-        """ """
+        """Testing save method """
         new = self.value()
         self.assertEqual(type(new.city_id), str)
 
@@ -64,6 +64,6 @@ class test_Place(test_basemodel):
         self.assertEqual(type(new.latitude), float)
 
     def test_amenity_ids(self):
-        """ """
+        """Testing save method """
         new = self.value()
         self.assertEqual(type(new.amenity_ids), list)
