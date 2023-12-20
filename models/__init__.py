@@ -16,4 +16,5 @@ def create_storage():
         return FileStorage()
 
 storage = create_storage()
+storage.reload()
 
