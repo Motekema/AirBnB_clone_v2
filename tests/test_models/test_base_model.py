@@ -6,6 +6,7 @@ from models.base_model import BaseModel, Base
 from datetime import datetime
 import unittest
 from uuid import UUID
+from models import storage
 
 @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') == 'db',
                  'basemodel test not supported')
