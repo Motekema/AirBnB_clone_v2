@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""Testing save method """
 from models.base_model import BaseModel
 import unittest
 import datetime
@@ -10,7 +10,7 @@ import pycodestyle
 
 
 class test_basemodel(unittest.TestCase):
-    """ """
+    """Testing save method """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -39,7 +39,7 @@ class test_basemodel(unittest.TestCase):
             pass
 
     def test_default(self):
-        """ """
+        """Testing save method """
         i = self.value()
         self.assertEqual(type(i), self.value)
 
@@ -80,7 +80,7 @@ class test_basemodel(unittest.TestCase):
         self.assertEqual(i.to_dict(), n)
 
     def test_kwargs_none(self):
-        """ """
+        """Testing save method """
         n = {None: None}
         with self.assertRaises(TypeError):
             new = self.value(**n)
