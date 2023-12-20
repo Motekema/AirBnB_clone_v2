@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" """
+"""Modal test """
 from tests.test_models.test_base_model import test_basemodel
 from models.user import User
 
 
 class test_User(test_basemodel):
-    """ """
+    """Test """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -29,6 +29,6 @@ class test_User(test_basemodel):
         self.assertEqual(type(new.email), str)
 
     def test_password(self):
-        """ """
+        """Now """
         new = self.value()
         self.assertEqual(type(new.password), str)
