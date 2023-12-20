@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module for testing file storage"""
+""" Module for testing the file storage"""
 import unittest
 from models.base_model import BaseModel
 from models import storage
@@ -7,7 +7,7 @@ import os
 
 
 class test_fileStorage(unittest.TestCase):
-    """ Class to test the file storage method """
+    """ Class of test the file storage method """
 
     def setUp(self):
         """ Set up test environment """
@@ -29,7 +29,7 @@ class test_fileStorage(unittest.TestCase):
         self.assertEqual(len(storage.all()), 0)
 
     def test_new(self):
-        """ New object is correctly added to __objects """
+        """The new object is correctly added to __objects """
         new = BaseModel()
         for obj in storage.all().values():
             temp = obj
@@ -42,7 +42,7 @@ class test_fileStorage(unittest.TestCase):
         self.assertIsInstance(temp, dict)
 
     def test_base_model_instantiation(self):
-        """ File is not created on BaseModel save """
+        """ File that not created on BaseModel save """
         new = BaseModel()
         self.assertFalse(os.path.exists('file.json'))
 
@@ -95,7 +95,7 @@ class test_fileStorage(unittest.TestCase):
         self.assertEqual(type(storage.all()), dict)
 
     def test_key_format(self):
-        """ Key is properly formatted """
+        """ Key are properly formatted """
         new = BaseModel()
         _id = new.to_dict()['id']
         for key in storage.all().keys():
