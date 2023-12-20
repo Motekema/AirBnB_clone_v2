@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" """
+"""This test """
 from tests.test_models.test_base_model import test_basemodel
 from models.place import Place
 
 
 class test_Place(test_basemodel):
-    """ """
+    """Now nerver """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -44,7 +44,7 @@ class test_Place(test_basemodel):
         self.assertEqual(type(new.number_bathrooms), int)
 
     def test_max_guest(self):
-        """ """
+        """test """
         new = self.value()
         self.assertEqual(type(new.max_guest), int)
 
