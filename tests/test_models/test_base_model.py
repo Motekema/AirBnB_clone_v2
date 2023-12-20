@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" test console """
 from models.base_model import BaseModel
 import unittest
 import datetime
@@ -18,7 +18,7 @@ class test_basemodel(unittest.TestCase):
         self.value = BaseModel
 
     def setUp(self):
-        """ """
+        """One model """
         pass
 
     def tearDown(self):
@@ -40,7 +40,7 @@ class test_basemodel(unittest.TestCase):
         self.assertFalse(new is i)
 
     def test_kwargs_int(self):
-        """ """
+        """  create self"""
         i = self.value()
         copy = i.to_dict()
         copy.update({1: 2})
