@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module for testing the file storage"""
+""" Module for testing file storage"""
 import unittest
 from models.base_model import BaseModel
 from models import storage
@@ -7,7 +7,7 @@ import os
 
 
 class test_fileStorage(unittest.TestCase):
-    """ Class to test a file storage method """
+    """ Class to test the file storage method """
 
     def setUp(self):
         """ Set up test environment """
@@ -105,5 +105,5 @@ class test_fileStorage(unittest.TestCase):
     def test_storage_var_created(self):
         """ FileStorage object storage created """
         from models.engine.file_storage import FileStorage
-        #print(type(storage))
+        print(type(storage))
         self.assertEqual(type(storage), FileStorage)
