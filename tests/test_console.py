@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for console.py."""
+"""Defines the unittests for console.py."""
 import os
 import unittest
 from unittest.mock import patch
@@ -15,7 +15,7 @@ class TestHBNBCommand(unittest.TestCase):
     def setUpClass(cls):
         """HBNBCommand testing setup.
 
-        Temporarily rename any existing file.json.
+        Temporarily rename any of existing file.json.
         Reset FileStorage objects dictionary.
         Create an instance of the command interpreter.
         """
@@ -30,7 +30,7 @@ class TestHBNBCommand(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """HBNBCommand testing teardown.
+        """HBNBCommand the testing teardown.
 
         Restore original file.json.
         Delete the test HBNBCommand instance.
