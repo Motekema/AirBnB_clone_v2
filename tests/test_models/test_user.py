@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""Testing save method """
 from tests.test_models.test_base_model import test_basemodel
 from models.user import User
 
@@ -19,12 +19,12 @@ class test_User(test_basemodel):
         self.assertEqual(type(new.first_name), str)
 
     def test_last_name(self):
-        """ """
+        """Testing save method """
         new = self.value()
         self.assertEqual(type(new.last_name), str)
 
     def test_email(self):
-        """ """
+        """On this """
         new = self.value()
         self.assertEqual(type(new.email), str)
 
