@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" """
+""" change """
 from tests.test_models.test_base_model import test_basemodel
 from models.city import City
 
 
 class test_City(test_basemodel):
-    """ """
+    """one time """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -14,7 +14,7 @@ class test_City(test_basemodel):
         self.value = City
 
     def test_state_id(self):
-        """ """
+        """Now or never """
         new = self.value()
         self.assertEqual(type(new.state_id), str)
 
