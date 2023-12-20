@@ -14,7 +14,7 @@ class test_Place(test_basemodel):
         self.value = Place
 
     def test_city_id(self):
-        """ """
+        """Change """
         new = self.value()
         self.assertEqual(type(new.city_id), str)
 
