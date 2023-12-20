@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" new class for sqlAlchemy """
+"""The new class for sqlAlchemy """
 from os import getenv
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import (create_engine)
@@ -14,7 +14,7 @@ from models.amenity import Amenity
 
 
 class DBStorage:
-    """ create tables in environmental"""
+    """To create tables in environmental"""
     __engine = None
     __session = None
 
@@ -33,9 +33,9 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        """returns a dictionary
+        """Returns the dictionary
         Return:
-            returns a dictionary of __object
+            Returns the dictionary of __object
         """
         dic = {}
         if cls:
@@ -55,7 +55,7 @@ class DBStorage:
         return (dic)
 
     def new(self, obj):
-        """add a new element in the table
+        """add the new element to the table
         """
         self.__session.add(obj)
 
