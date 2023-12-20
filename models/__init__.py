@@ -6,13 +6,14 @@
 -> Otherwise, instantiates a file storage engine (FileStorage).
 """
 from os import getenv
+from models.engine.db_storage import DBStorage
+from models.engine.file_storage import FileStorage
 
+def create_storage():
+    if getenv("HBNB_TYPE_STORAGE") == "db":
+        return DBStorage()
+    else:
+        return FileStorage()
 
-if getenv("HBNB_TYPE_STORAGE") == "db":
-    from models.engine.db_storage import DBStorage
-    storage = DBStorage()
-else:
-    from models.engine.file_storage import FileStorage
-    storage = FileStorage()
-storage.reload()
+storage = create_storage()
 
