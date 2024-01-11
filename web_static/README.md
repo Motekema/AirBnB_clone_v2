@@ -8,8 +8,8 @@ At the end of this project you are expected to be able to explain to anyone, wit
 * What is an attribute?
 * How does the browser load a webpage?
 * What is CSS?
-* How do you add style to an element?
+* How do you add your style to an element?
 * What is a class?
 * What is a selector?
-* How do you compute CSS Specificity Value?
+* How do your compute CSS Specificity Value?
 * What are Box properties in CSS?
