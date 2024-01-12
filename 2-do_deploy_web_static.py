@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
 It istributes an archive to your web servers, using function do_deploy
-All remote commands must be executed on your both web servers 
+All remote commands must be executed on your both web servers
 (using env.hosts = ['<IP web-01>', 'IP web-02'] variable in your script
 '''
 
