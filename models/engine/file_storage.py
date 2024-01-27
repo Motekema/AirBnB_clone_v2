@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This are the file storage class for AirBnB"""
+"""This is the file storage class for AirBnB"""
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -12,17 +12,17 @@ import shlex
 
 
 class FileStorage:
-    """This is class serializes instances to a JSON file and
+    """This class serializes instances to a JSON file and
     deserializes JSON file instances
     Attributes:
-        __file_path: path to ta JSON file
+        __file_path: path to a JSON file
         __objects: objects will be stored
     """
     __file_path = "file.json"
     __objects = {}
 
     def all(self, cls=None):
-        """returns a dictionary
+        """Display a dictionary
         Return:
             returns the dictionary of __object
         """
