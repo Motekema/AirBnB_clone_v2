@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This are the amenity class"""
+"""This is the amenity class"""
 from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
@@ -7,7 +7,7 @@ from models.place import place_amenity
 
 
 class Amenity(BaseModel, Base):
-    """This are the class for Amenity
+    """This is the class for Amenity
     Attributes:
         name: input name
     """
