@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This are the state class"""
+"""This is the state class"""
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
 from sqlalchemy.orm import relationship
@@ -12,7 +12,7 @@ import shlex
 class State(BaseModel, Base):
     """This are the class for State
     Attributes:
-        name: input names
+        name: The input name
     """
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
